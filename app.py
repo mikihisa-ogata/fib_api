@@ -15,7 +15,7 @@ def fib_calc(n):
         return b
 
 # フィボナッチ数を返すAPIエンドポイント
-@app.route('/sample.com/fib', methods=['GET'])
+@app.route('/fib', methods=['GET'])
 def get_fib():
     try:
         n = int(request.args.get('n'))
@@ -27,4 +27,4 @@ def get_fib():
         return jsonify({'error': 'invalid parameter'}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
