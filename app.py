@@ -14,6 +14,10 @@ def fib_calc(n):
             a, b = b, a + b
         return b
 
+@app.route('/')
+def hello():
+    return "enter number"
+
 # フィボナッチ数を返すAPIエンドポイント
 @app.route('/fib', methods=['GET'])
 def get_fib():
