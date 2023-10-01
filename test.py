@@ -17,7 +17,6 @@ class EndpointTest(unittest.TestCase):
             ('abc', 400, {'error': 'invalid parameter'}),
             (1000000, 400, {'error': 'n is too big'}),
         ]
-
         for n, expected_status, expected_data in test_cases:
             with self.subTest(n=n):
                 response = self.app.get(f'/fib?n={n}')
@@ -28,7 +27,7 @@ class EndpointTest(unittest.TestCase):
 # フィボナッチ数を計算する関数のテスト
 class FibCalcTest(unittest.TestCase):
     def test_fib(self):
-        test_cases = [(0, 0), (1, 1), (2, 1), (3, 2), (10, 55), (-1, 0), (-5, 0)]
+        test_cases = [(0, None), (1, 1), (2, 1), (3, 2), (10, 55), (-1, None), (-5, None)]
         for n, expected in test_cases:
             with self.subTest(n=n, expected=expected):
                 result = fib_calc(n)

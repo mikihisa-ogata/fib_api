@@ -5,8 +5,8 @@ app = Flask(__name__)
 # フィボナッチ数の計算
 def fib_calc(n):
     if n <= 0:
-        return 0
-    elif n == 1:
+        return None
+    elif n == 1 or n == 2:
         return 1
     else:
         a, b = 0, 1
