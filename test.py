@@ -27,7 +27,7 @@ class EndpointTest(unittest.TestCase):
 # フィボナッチ数を計算する関数のテスト
 class FibCalcTest(unittest.TestCase):
     def test_fib(self):
-        test_cases = [(0, None), (1, 1), (2, 1), (3, 2), (10, 55), (-1, None), (-5, None)]
+        test_cases = [(-1, None), (0, None), (1, 1), (2, 1), (3, 2), (10, 55), (100, 354224848179261915075)]
         for n, expected in test_cases:
             with self.subTest(n=n, expected=expected):
                 result = fib_calc(n)

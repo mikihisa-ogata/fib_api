@@ -21,9 +21,6 @@ def get_fib():
         n = int(request.args.get('n'))
     except Exception:
         return jsonify({'error': 'invalid parameter'}), 400
-
-    if n is None:
-        return jsonify({'error': 'please enter natural number'}), 400
     
     if n <= 0:
         return jsonify({'error': 'negative in not supported'}), 400
@@ -35,4 +32,4 @@ def get_fib():
     return jsonify({'result': result}), 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
