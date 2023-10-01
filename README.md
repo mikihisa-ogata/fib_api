@@ -1,6 +1,8 @@
 # ソースコード概要
 このソースコードは、Flaskを使用して実装されたRESTful APIとそのテストケースのコードです。APIはフィボナッチ数列の値を計算して返し、さまざまなエラー条件に対応します。また、APIのテストケースも含まれており、APIエンドポイントおよびフィボナッチ数計算関数の動作を確認します。
 
+# 実際に動いている環境のエンドポイントURL
+[https://sample-fib-872242ba0f7f.herokuapp.com/fib](https://sample-fib-872242ba0f7f.herokuapp.com/fib)
 
 # ソースコードの詳細
 
