@@ -1,6 +1,5 @@
 import unittest
-from app import app
-from app import fib_calc
+from view import app
 
 # エンドポイントのテスト
 class EndpointTest(unittest.TestCase):
@@ -13,7 +12,7 @@ class EndpointTest(unittest.TestCase):
     def test_endpoint(self):
         test_cases = [
             (10, 200, {'result': 55}),
-            (-5, 400, {'error': 'negative in not supported'}),
+            (-5, 400, {'error': 'negative is not supported'}),
             ('abc', 400, {'error': 'invalid parameter'}),
             (1000000, 400, {'error': 'n is too big'}),
         ]
@@ -23,15 +22,6 @@ class EndpointTest(unittest.TestCase):
                 data = response.get_json()
                 self.assertEqual(response.status_code, expected_status)
                 self.assertEqual(data, expected_data)
-
-# フィボナッチ数を計算する関数のテスト
-class FibCalcTest(unittest.TestCase):
-    def test_fib(self):
-        test_cases = [(-1, None), (0, None), (1, 1), (2, 1), (3, 2), (10, 55), (100, 354224848179261915075)]
-        for n, expected in test_cases:
-            with self.subTest(n=n, expected=expected):
-                result = fib_calc(n)
-                self.assertEqual(result, expected)
 
 if __name__ == '__main__':
     unittest.main()
